@@ -1,0 +1,22 @@
+{% load my_tags %}
+{% load product_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p>Name: {{ name }}</p>
+    <p>Age: {{ age }}</p>
+
+    {% my_tag %}
+    {% get_product_info 100 "apple" 5000 %}
+    <hr/>
+    {% for book in books %}
+        <div>Price : {{book.price}}</div>
+    {% endfor %}
+</body>
+</html>
